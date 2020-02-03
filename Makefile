@@ -95,6 +95,9 @@ functional: go-functional
 ## integration: Run all functional tests.
 integration: go-integration
 
+## integration: Run observer binance test
+obinance: go-observer-binance
+
 ## fmt: Run `go fmt` for all go files.
 fmt: go-fmt
 
@@ -154,6 +157,10 @@ go-functional:
 go-integration:
 	@echo "  >  Runing integration tests"
 	GOBIN=$(GOBIN) TEST_CONFIG=$(CONFIG_FILE) go test -race -tags=integration -v ./pkg/tests/integration
+
+go-observer-binance:
+	@echo "  >  Runing observer binance test"
+	GOBIN=$(GOBIN) TEST_CONFIG=$(CONFIG_FILE) go test -race -tags=observerbinance -v ./pkg/tests/observerbinance
 
 go-fmt:
 	@echo "  >  Format all go files"

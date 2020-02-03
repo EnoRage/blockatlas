@@ -62,3 +62,10 @@ func (db *Redis) IsReady() bool {
 	}
 	return db.client.Ping().Err() == nil
 }
+
+func (db *Redis) FlushAll() bool {
+	if db.client == nil {
+		return false
+	}
+	return db.client.FlushAll().Err() == nil
+}
