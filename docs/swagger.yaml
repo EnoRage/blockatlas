@@ -19,15 +19,6 @@ definitions:
       type:
         type: string
     type: object
-  api.CoinBatchRequest:
-    properties:
-      coin:
-        type: integer
-    type: object
-  api.CoinsRequest:
-    items:
-      $ref: '#/definitions/api.CoinBatchRequest'
-    type: array
   api.TickerRequest:
     properties:
       assets:
@@ -971,7 +962,7 @@ paths:
         name: delegations
         required: true
         schema:
-          $ref: '#/definitions/api.CoinsRequest'
+          $ref: '#/definitions/api.AddressesRequest'
       produces:
       - application/json
       responses:

@@ -579,7 +579,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/api.CoinsRequest"
+                            "$ref": "#/definitions/api.AddressesRequest"
                         }
                     }
                 ],
@@ -1052,20 +1052,6 @@
                 "type": {
                     "type": "string"
                 }
-            }
-        },
-        "api.CoinBatchRequest": {
-            "type": "object",
-            "properties": {
-                "coin": {
-                    "type": "integer"
-                }
-            }
-        },
-        "api.CoinsRequest": {
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/api.CoinBatchRequest"
             }
         },
         "api.TickerRequest": {
