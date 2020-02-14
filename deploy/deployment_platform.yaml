@@ -1,0 +1,3266 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-ethereum
+  name: platform-ethereum
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-ethereum
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-ethereum
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-ethereum","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-ethereum
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: ethereum
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-ethereum
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-ethereum
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-classic
+  name: platform-classic
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-classic
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-classic
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-classic","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-classic
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: classic
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-classic
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-classic
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-icon
+  name: platform-icon
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-icon
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-icon
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-icon","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-icon
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: icon
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-icon
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-icon
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-cosmos
+  name: platform-cosmos
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-cosmos
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-cosmos
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-cosmos","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-cosmos
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: cosmos
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-cosmos
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-cosmos
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-ripple
+  name: platform-ripple
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-ripple
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-ripple
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-ripple","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-ripple
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: ripple
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-ripple
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-ripple
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-stellar
+  name: platform-stellar
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-stellar
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-stellar
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-stellar","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-stellar
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: stellar
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-stellar
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-stellar
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-poa
+  name: platform-poa
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-poa
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-poa
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-poa","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-poa
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: poa
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-poa
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-poa
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-tron
+  name: platform-tron
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-tron
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-tron
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-tron","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-tron
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: tron
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-tron
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-tron
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-fio
+  name: platform-fio
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-fio
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-fio
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-fio","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-fio
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: fio
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-fio
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-fio
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-nimiq
+  name: platform-nimiq
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-nimiq
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-nimiq
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-nimiq","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-nimiq
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: nimiq
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-nimiq
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-nimiq
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-iotex
+  name: platform-iotex
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-iotex
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-iotex
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-iotex","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-iotex
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: iotex
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-iotex
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-iotex
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-zilliqa
+  name: platform-zilliqa
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-zilliqa
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-zilliqa
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-zilliqa","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-zilliqa
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: zilliqa
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-zilliqa
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-zilliqa
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-aion
+  name: platform-aion
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-aion
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-aion
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-aion","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-aion
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: aion
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-aion
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-aion
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-aeternity
+  name: platform-aeternity
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-aeternity
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-aeternity
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-aeternity","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-aeternity
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: aeternity
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-aeternity
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-aeternity
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-kava
+  name: platform-kava
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-kava
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-kava
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-kava","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-kava
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: kava
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-kava
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-kava
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-theta
+  name: platform-theta
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-theta
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-theta
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-theta","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-theta
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: theta
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-theta
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-theta
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-binance
+  name: platform-binance
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-binance
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-binance
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-binance","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-binance
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: binance
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-binance
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-binance
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-vechain
+  name: platform-vechain
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-vechain
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-vechain
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-vechain","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-vechain
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: vechain
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-vechain
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-vechain
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-callisto
+  name: platform-callisto
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-callisto
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-callisto
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-callisto","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-callisto
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: callisto
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-callisto
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-callisto
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-tomochain
+  name: platform-tomochain
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-tomochain
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-tomochain
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-tomochain","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-tomochain
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: tomochain
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-tomochain
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-tomochain
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-thundertoken
+  name: platform-thundertoken
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-thundertoken
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-thundertoken
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-thundertoken","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-thundertoken
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: thundertoken
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-thundertoken
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-thundertoken
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-ontology
+  name: platform-ontology
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-ontology
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-ontology
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-ontology","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-ontology
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: ontology
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-ontology
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-ontology
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-tezos
+  name: platform-tezos
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-tezos
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-tezos
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-tezos","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-tezos
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: tezos
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-tezos
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-tezos
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-kin
+  name: platform-kin
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-kin
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-kin
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-kin","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-kin
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: kin
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-kin
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-kin
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-nebulas
+  name: platform-nebulas
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-nebulas
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-nebulas
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-nebulas","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-nebulas
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: nebulas
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-nebulas
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-nebulas
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-gochain
+  name: platform-gochain
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-gochain
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-gochain
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-gochain","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-gochain
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: gochain
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-gochain
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-gochain
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-wanchain
+  name: platform-wanchain
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-wanchain
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-wanchain
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-wanchain","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-wanchain
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: wanchain
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-wanchain
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-wanchain
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-waves
+  name: platform-waves
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-waves
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-waves
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-waves","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-waves
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: waves
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-waves
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-waves
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-bitcoin
+  name: platform-bitcoin
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-bitcoin
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-bitcoin
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-bitcoin","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-bitcoin
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: bitcoin
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-bitcoin
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-bitcoin
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-litecoin
+  name: platform-litecoin
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-litecoin
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-litecoin
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-litecoin","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-litecoin
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: litecoin
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-litecoin
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-litecoin
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-doge
+  name: platform-doge
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-doge
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-doge
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-doge","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-doge
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: doge
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-doge
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-doge
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-dash
+  name: platform-dash
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-dash
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-dash
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-dash","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-dash
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: dash
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-dash
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-dash
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-viacoin
+  name: platform-viacoin
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-viacoin
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-viacoin
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-viacoin","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-viacoin
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: viacoin
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-viacoin
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-viacoin
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-groestlcoin
+  name: platform-groestlcoin
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-groestlcoin
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-groestlcoin
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-groestlcoin","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-groestlcoin
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: groestlcoin
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-groestlcoin
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-groestlcoin
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-zcash
+  name: platform-zcash
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-zcash
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-zcash
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-zcash","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-zcash
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: zcash
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-zcash
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-zcash
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-zcoin
+  name: platform-zcoin
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-zcoin
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-zcoin
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-zcoin","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-zcoin
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: zcoin
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-zcoin
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-zcoin
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-bitcoincash
+  name: platform-bitcoincash
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-bitcoincash
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-bitcoincash
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-bitcoincash","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-bitcoincash
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: bitcoincash
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-bitcoincash
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-bitcoincash
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-ravencoin
+  name: platform-ravencoin
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-ravencoin
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-ravencoin
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-ravencoin","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-ravencoin
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: ravencoin
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-ravencoin
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-ravencoin
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-qtum
+  name: platform-qtum
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-qtum
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-qtum
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-qtum","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-qtum
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: qtum
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-qtum
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-qtum
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-zelcash
+  name: platform-zelcash
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-zelcash
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-zelcash
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-zelcash","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-zelcash
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: zelcash
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-zelcash
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-zelcash
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-decred
+  name: platform-decred
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-decred
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-decred
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-decred","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-decred
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: decred
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-decred
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-decred
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-algorand
+  name: platform-algorand
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-algorand
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-algorand
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-algorand","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-algorand
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: algorand
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-algorand
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-algorand
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-nano
+  name: platform-nano
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-nano
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-nano
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-nano","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-nano
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: nano
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-nano
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-nano
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-digibyte
+  name: platform-digibyte
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-digibyte
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-digibyte
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-digibyte","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-digibyte
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: digibyte
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-digibyte
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-digibyte
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-harmony
+  name: platform-harmony
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-harmony
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-harmony
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-harmony","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-harmony
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: harmony
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-harmony
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-harmony
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-default-platform-kusama
+  name: platform-kusama
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/platform-kusama
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-default-platform-kusama
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+        field.cattle.io/ports: '[[{"containerPort":8420,"dnsName":"platform-kusama","hostPort":0,"kind":"ClusterIP","name":"8420tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-platform-kusama
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: kusama
+        image: neojt/platform_api
+        imagePullPolicy: Always
+        name: platform-kusama
+        ports:
+        - containerPort: 8420
+          name: 8420tcp02
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsConfig: {}
+      dnsPolicy: ClusterFirst
+      hostname: platform-kusama
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---

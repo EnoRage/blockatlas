@@ -1,0 +1,2990 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-ethereum
+  name: observer-ethereum
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-ethereum
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-ethereum
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-ethereum
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: ethereum
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-ethereum
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-classic
+  name: observer-classic
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-classic
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-classic
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-classic
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: classic
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-classic
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-icon
+  name: observer-icon
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-icon
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-icon
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-icon
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: icon
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-icon
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-cosmos
+  name: observer-cosmos
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-cosmos
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-cosmos
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-cosmos
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: cosmos
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-cosmos
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-ripple
+  name: observer-ripple
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-ripple
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-ripple
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-ripple
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: ripple
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-ripple
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-stellar
+  name: observer-stellar
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-stellar
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-stellar
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-stellar
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: stellar
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-stellar
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-poa
+  name: observer-poa
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-poa
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-poa
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-poa
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: poa
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-poa
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-tron
+  name: observer-tron
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-tron
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-tron
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-tron
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: tron
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-tron
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-fio
+  name: observer-fio
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-fio
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-fio
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-fio
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: fio
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-fio
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-nimiq
+  name: observer-nimiq
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-nimiq
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-nimiq
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-nimiq
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: nimiq
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-nimiq
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-iotex
+  name: observer-iotex
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-iotex
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-iotex
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-iotex
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: iotex
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-iotex
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-zilliqa
+  name: observer-zilliqa
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-zilliqa
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-zilliqa
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-zilliqa
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: zilliqa
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-zilliqa
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-aion
+  name: observer-aion
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-aion
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-aion
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-aion
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: aion
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-aion
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-aeternity
+  name: observer-aeternity
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-aeternity
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-aeternity
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-aeternity
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: aeternity
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-aeternity
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-kava
+  name: observer-kava
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-kava
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-kava
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-kava
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: kava
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-kava
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-theta
+  name: observer-theta
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-theta
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-theta
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-theta
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: theta
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-theta
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-binance
+  name: observer-binance
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-binance
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-binance
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-binance
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: binance
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-binance
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-vechain
+  name: observer-vechain
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-vechain
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-vechain
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-vechain
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: vechain
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-vechain
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-callisto
+  name: observer-callisto
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-callisto
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-callisto
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-callisto
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: callisto
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-callisto
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-tomochain
+  name: observer-tomochain
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-tomochain
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-tomochain
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-tomochain
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: tomochain
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-tomochain
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-thundertoken
+  name: observer-thundertoken
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-thundertoken
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-thundertoken
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-thundertoken
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: thundertoken
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-thundertoken
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-ontology
+  name: observer-ontology
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-ontology
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-ontology
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-ontology
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: ontology
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-ontology
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-tezos
+  name: observer-tezos
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-tezos
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-tezos
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-tezos
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: tezos
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-tezos
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-kin
+  name: observer-kin
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-kin
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-kin
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-kin
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: kin
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-kin
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-nebulas
+  name: observer-nebulas
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-nebulas
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-nebulas
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-nebulas
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: nebulas
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-nebulas
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-gochain
+  name: observer-gochain
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-gochain
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-gochain
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-gochain
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: gochain
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-gochain
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-wanchain
+  name: observer-wanchain
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-wanchain
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-wanchain
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-wanchain
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: wanchain
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-wanchain
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-waves
+  name: observer-waves
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-waves
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-waves
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-waves
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: waves
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-waves
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-bitcoin
+  name: observer-bitcoin
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-bitcoin
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-bitcoin
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-bitcoin
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: bitcoin
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-bitcoin
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-litecoin
+  name: observer-litecoin
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-litecoin
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-litecoin
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-litecoin
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: litecoin
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-litecoin
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-doge
+  name: observer-doge
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-doge
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-doge
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-doge
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: doge
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-doge
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-dash
+  name: observer-dash
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-dash
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-dash
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-dash
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: dash
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-dash
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-viacoin
+  name: observer-viacoin
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-viacoin
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-viacoin
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-viacoin
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: viacoin
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-viacoin
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-groestlcoin
+  name: observer-groestlcoin
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-groestlcoin
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-groestlcoin
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-groestlcoin
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: groestlcoin
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-groestlcoin
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-zcash
+  name: observer-zcash
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-zcash
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-zcash
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-zcash
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: zcash
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-zcash
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-zcoin
+  name: observer-zcoin
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-zcoin
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-zcoin
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-zcoin
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: zcoin
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-zcoin
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-bitcoincash
+  name: observer-bitcoincash
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-bitcoincash
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-bitcoincash
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-bitcoincash
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: bitcoincash
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-bitcoincash
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-ravencoin
+  name: observer-ravencoin
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-ravencoin
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-ravencoin
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-ravencoin
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: ravencoin
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-ravencoin
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-qtum
+  name: observer-qtum
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-qtum
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-qtum
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-qtum
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: qtum
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-qtum
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-zelcash
+  name: observer-zelcash
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-zelcash
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-zelcash
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-zelcash
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: zelcash
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-zelcash
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-decred
+  name: observer-decred
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-decred
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-decred
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-decred
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: decred
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-decred
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-algorand
+  name: observer-algorand
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-algorand
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-algorand
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-algorand
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: algorand
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-algorand
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-nano
+  name: observer-nano
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-nano
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-nano
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-nano
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: nano
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-nano
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-digibyte
+  name: observer-digibyte
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-digibyte
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-digibyte
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-digibyte
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: digibyte
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-digibyte
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-harmony
+  name: observer-harmony
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-harmony
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-harmony
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-harmony
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: harmony
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-harmony
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-observer-observer-kusama
+  name: observer-kusama
+  namespace: observer
+  selfLink: /apis/apps/v1/namespaces/observer/deployments/observer-kusama
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-observer-observer-kusama
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-02-07T02:26:22Z"
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-observer-observer-kusama
+    spec:
+      containers:
+      - env:
+        - name: ATLAS_PLATFORM
+          value: kusama
+        image: neojt/observer
+        imagePullPolicy: Always
+        name: observer-kusama
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /config/
+          name: config
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: atlas-config
+          optional: false
+        name: config
+
+---
